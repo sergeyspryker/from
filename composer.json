@@ -1,0 +1,20 @@
+{
+    "name": "pavelmaksimov25/randomizer",
+    "type": "library",
+    "require": {
+        "php": "^8.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavlo Maksymov",
+            "email": "pavlo.maksymov@spryker.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Randomizer\\": "src/"
+        }
+    }
+}
