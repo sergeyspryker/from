@@ -9,10 +9,18 @@ final class Randomizer
      *
      * @return string
      */
-    public function randomString(string ...$strings): string
+    public final function randomString(string ...$strings): string
     {
         $index = mt_rand(0, count($strings) - 1);
 
         return $strings[$index];
+    }
+
+    /**
+     * @return bool
+     */
+    public final function randomBool(): bool
+    {
+        return (bool)mt_rand(0, 1);
     }
 }
