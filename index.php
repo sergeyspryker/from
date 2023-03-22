@@ -9,5 +9,5 @@ echo "Random string: ";
 $r = new Randomizer();
 echo($r->randomString('hey', 'hi', 'test') . PHP_EOL);
 
-echo "";
+echo "Random ";
 $r->randomBool();
