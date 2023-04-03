@@ -8,7 +8,6 @@ on:
 
 jobs:
   dispatch:
-    needs: build
     strategy:
       matrix:
         repo: ['pavelmaksimov25/cheerup']
