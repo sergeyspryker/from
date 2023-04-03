@@ -1,0 +1,16 @@
+jobs:
+  dispatch:
+    needs: build
+    strategy:
+      matrix:
+        repo: ['pavelmaksimov25/cheerup']
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PAT }}
+          repository: ${{ matrix.repo }}
+          event-type: update-dependencies
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
