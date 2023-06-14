@@ -14,4 +14,4 @@ $bVal = $r->randomBool();
 echo "Random Bool: ";
 echo $bVal === false ? 'false' : 'true' . PHP_EOL;
 
-//test-1
+//test
