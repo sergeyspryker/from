@@ -6,10 +6,9 @@ on:
       - main
 
 jobs:
-  build:
-
+  trigger-external-pr:
+    permissions: write-all
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v1
