@@ -1,5 +1,5 @@
 {
-    "name": "sergeyspryker/randomizer",
+    "name": "from/randomizer",
     "type": "library",
     "require": {
         "php": "^8.0"
