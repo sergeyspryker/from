@@ -17,7 +17,7 @@ jobs:
 
       - name: Trigger external repo pr creation
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EVENT: EXTERNAL_TRIGGER_EVENT
           ORG: sergeyspryker
           REPO: to
