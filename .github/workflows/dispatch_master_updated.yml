@@ -7,7 +7,6 @@ on:
 
 jobs:
   trigger-external-pr:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main branch
@@ -17,7 +16,7 @@ jobs:
 
       - name: Trigger external repo pr creation
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
           EVENT: EXTERNAL_TRIGGER_EVENT
           ORG: sergeyspryker
           REPO: to
