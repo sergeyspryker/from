@@ -24,5 +24,5 @@ final class Randomizer
         return (bool)mt_rand(0, 1);
     }
 
-    // test 2
+    // test 23
 }
