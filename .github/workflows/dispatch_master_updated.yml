@@ -1,5 +1,11 @@
 name: Master branch updated
 
+env:
+  AUTH_TOKEN: ${{ secrets.PAT }}
+  EVENT: dependency_updated
+  ORG: sergeyspryker
+  REPO: to
+
 on:
   push:
     branches:
@@ -9,21 +15,11 @@ jobs:
   trigger-external-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v3
-        with:
-          ref: main
-
       - name: Trigger external repo pr creation
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-          EVENT: dependency_updated
-          ORG: sergeyspryker
-          REPO: to
         run: |
           curl -d "{\"event_type\": \"${EVENT}\"}" \
           -X POST \
           -H "Content-Type: application/json" \
-          -H "Authorization: token ${GITHUB_TOKEN}" \
+          -H "Authorization: token ${AUTH_TOKEN}" \
           -H "Accept: application/vnd.github.everest-preview+json" \
           "https://api.github.com/repos/${ORG}/${REPO}/dispatches"
