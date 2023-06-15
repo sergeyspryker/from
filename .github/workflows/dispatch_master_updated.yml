@@ -1,6 +1,7 @@
 name: Master branch updated
 
 env:
+  TARGET_BRANCH: main
   AUTH_TOKEN: ${{ secrets.PAT }}
   EVENT: dependency_updated
   ORG: sergeyspryker
@@ -9,7 +10,7 @@ env:
 on:
   push:
     branches:
-      - main
+      - ${{ env.TARGET_BRANCH }}
 
 jobs:
   trigger-external-pr:
