@@ -22,6 +22,7 @@ jobs:
           REPO: to
         run: |
           curl -d "{\"event_type\": \"${EVENT}\"}" \
+          -X POST \
           -H "Content-Type: application/json" \
           -H "Authorization: token ${GITHUB_TOKEN}" \
           -H "Accept: application/vnd.github.everest-preview+json" \
